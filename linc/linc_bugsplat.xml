@@ -1,0 +1,25 @@
+<xml>
+
+    <!-- For a more in depth guide: https://github.com/snowkit/hxcpp-guide -->
+
+    <files id='haxe'>
+
+        <!-- add files and flags to the haxe c++ build -->
+
+        <compilerflag value='-I${LINC_BUGSPLAT_PATH}/linc/'/>
+
+        <file name='${LINC_BUGSPLAT_PATH}linc/linc_bugsplat.cpp' />
+
+    </files>
+
+    <target id="haxe">
+        <lib name="${LINC_BUGSPLAT_PATH}lib/bugsplat/lib/BugSplat.lib"/>
+        <!-- add linker flags to the haxe build output -->
+
+    </target>
+
+    <copyFile name="BugSplat.dll" from="${LINC_BUGSPLAT_PATH}lib/bugsplat/bin" if="windows"/>
+    <copyFile name="BugSplatRC.dll" from="${LINC_BUGSPLAT_PATH}lib/bugsplat/bin" if="windows"/>
+    <copyFile name="BsSndRpt.exe" from="${LINC_BUGSPLAT_PATH}lib/bugsplat/bin" if="windows"/>
+
+</xml>
